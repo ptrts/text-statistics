@@ -1,14 +1,26 @@
 public class WordData implements Comparable<WordData> {
-	public String word;
-	public int count = 0;
+	private String word;
+	private int count = 0;
 
 	WordData(String word) {
 		this.word = word;
 	}
 
+	public String getWord() {
+		return word;
+	}
+
+	public int getCount() {
+		return count;
+	}
+
+	public void incrementCount() {
+		count++;
+	}
+
 	@Override
 	public String toString() {
-		return word+": "+count;
+		return word + ": " + count;
 	}
 
 	@Override

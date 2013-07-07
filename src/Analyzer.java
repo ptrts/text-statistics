@@ -1,4 +1,6 @@
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.*;
 
 public class Analyzer {
@@ -26,10 +28,10 @@ public class Analyzer {
 			if (wordData == null) {
 				wordData = new WordData(word);
 				listWords.add(wordData);
-				mapWords.put(wordData.word, wordData);
+				mapWords.put(wordData.getWord(), wordData);
 			}
 
-			wordData.count++;
+			wordData.incrementCount();
 
 			wordBuilder.setLength(0);
 		}
@@ -53,9 +55,9 @@ public class Analyzer {
 		int i = 0;
 
 		for (WordData wordData : listWords) {
-			double percent = ((double) wordData.count) / wordsCount * 100;
+			double percent = ((double) wordData.getCount()) / wordsCount * 100;
 			percent = ((double) Math.round(percent * 100)) / 100;
-			printWriter.format("%d;%s;%d;%f%n", ++i, wordData.word, wordData.count, percent);
+			printWriter.format("%d;%s;%d;%f%n", ++i, wordData.getWord(), wordData.getCount(), percent);
 		}
 	}
 }
