@@ -1,3 +1,7 @@
+package com.suchorukov.tarouts.text_statistics;
+
+import com.suchorukov.tarouts.text_statistics.analizer.Analyzer;
+
 import java.io.*;
 
 public class Main {

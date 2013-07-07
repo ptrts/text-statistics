@@ -1,3 +1,5 @@
+package com.suchorukov.tarouts.text_statistics.analizer;
+
 public class WordData implements Comparable<WordData> {
 	private String word;
 	private int count = 0;
